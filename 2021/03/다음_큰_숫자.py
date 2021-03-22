@@ -1,16 +1,25 @@
+def count_one(nb):
+    cnt = 0
+    for i in nb:
+        if i == '1':
+            cnt += 1
+
+    return cnt
+
+
 def solution(n):
-    answer = 0
+    nb = format(n, 'b')
+    n_num = count_one(nb)
 
-    lstn = list(str(n))
+    while True:
+        n += 1
+        nb = format(n, 'b')
+        cnt_num = count_one(nb)
 
-    if '0' not in lstn:
-        return '10' + str(n)[1:]
+        if cnt_num == n_num:
+            break
 
-    for i in range(len(lstn)-1):
-        if lstn[i] == '0' and lstn[i+1] == '1':
-            lstn[i] = '1'
+    return n
 
 
-
-
-print(solution(1111))
+print(solution(15))
