@@ -10,9 +10,7 @@ def solution(s):
         cnt = 0
         result = 0
 
-        # print('---', i, '---')
         while True:
-            # print(s[start:start+idx], s[start+idx:start+idx*2], result)
             if s[start:start+idx] == s[start+idx:start+idx*2]:
                 cnt += 1
             else:
